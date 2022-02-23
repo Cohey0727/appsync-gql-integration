@@ -1,0 +1,32 @@
+type Todo {
+  id: ID!
+  name: String
+}
+
+enum SEX {
+  MALE
+  FEMALE
+  OTHER
+}
+
+type User {
+  id: ID!
+  name: String
+  sex: SEX
+}
+
+type Query {
+  getUser(id: ID!): User
+  getTodo(id: ID!): Todo
+}
+
+type Mutation {
+  addTodo(name: String!): Todo
+  addUser(name: String!): User
+  deleteTodo(id: ID!): Todo
+}
+
+type Schema {
+  query: Query
+  mutation: Mutation
+}
